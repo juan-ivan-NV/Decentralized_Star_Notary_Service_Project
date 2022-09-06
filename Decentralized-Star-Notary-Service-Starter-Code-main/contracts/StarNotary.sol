@@ -15,11 +15,15 @@ contract StarNotary is ERC721 {
     // name: Is a short name to your token
     // symbol: Is a short string like 'USD' -> 'American Dollar'
     
+    string public name = "Rigel Algebar Token";
+
+    string public symbol = "B Ori";
 
     // mapping the Star with the Owner Address
     mapping(uint256 => Star) public tokenIdToStarInfo;
     // mapping the TokenId and price
     mapping(uint256 => uint256) public starsForSale;
+
 
     
     // Create Star using the Struct
@@ -57,6 +61,8 @@ contract StarNotary is ERC721 {
     // Implement Task 1 lookUptokenIdToStarInfo
     function lookUptokenIdToStarInfo (uint _tokenId) public view returns (string memory) {
         //1. You should return the Star saved in tokenIdToStarInfo mapping
+        string memory starName = tokenIdToStarInfo[_tokenId].name;
+        return starName;
     }
 
     // Implement Task 1 Exchange Stars function
