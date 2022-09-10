@@ -77,9 +77,9 @@ it('lets user2 buy a star and decreases its balance in ether', async() => {
 
 it('can add the star name and star symbol properly', async() => {
     // 1. create a Star with different tokenId
-    let tokenId = 2;
+    let tokenId = 111;
     let instance = await StarNotary.deployed();
-    await instance.createStar('Awesome Star 2!', tokenId, {from: accounts[0]});
+    await instance.createStar('Test', tokenId, {from: accounts[0]});
     //2. Call the name and symbol properties in your Smart Contract and compare with the name and symbol provided
     assert.equal(await instance.name.call(), "Rigel Algebar Token");
     assert.equal(await instance.symbol.call(), "B Ori");
@@ -87,8 +87,8 @@ it('can add the star name and star symbol properly', async() => {
 
 it('lets 2 users exchange stars', async() => {
     // 1. create 2 Stars with different tokenId
-    let tokenId1 = 3;
-    let tokenId2 = 4;
+    let tokenId1 = 112;
+    let tokenId2 = 113;
     let instance = await StarNotary.deployed();
 
     let user1 = accounts[1];
@@ -107,7 +107,7 @@ it('lets 2 users exchange stars', async() => {
 
 it('lets a user transfer a star', async() => {
     // 1. create a Star with different tokenId
-    let tokenId1 = 3;
+    let tokenId1 = 114;
     let instance = await StarNotary.deployed();
 
     let user1 = accounts[1];
@@ -124,7 +124,7 @@ it('lets a user transfer a star', async() => {
 
 it('lookUptokenIdToStarInfo test', async() => {
     // 1. create a Star with different tokenId
-    let tokenId1 = 3;
+    let tokenId1 = 115;
     let instance = await StarNotary.deployed();
     
     // 2. Call your method lookUptokenIdToStarInfo
