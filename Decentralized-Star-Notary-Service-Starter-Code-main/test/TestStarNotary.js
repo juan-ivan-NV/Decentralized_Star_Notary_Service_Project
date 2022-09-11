@@ -97,7 +97,7 @@ it('lets 2 users exchange stars', async() => {
     // 2. Call the exchangeStars functions implemented in the Smart Contract
     await instance.createStar('Star1', tokenId1, {from: user1});
     await instance.createStar('Star2', tokenId2, {from: user2});
-    await instance.exchangeStar(tokenId1, tokenId2, {from: user1});
+    await instance.exchangeStars(tokenId1, tokenId2, {from: user1});
     
     // 3. Verify that the owners changed
     assert.equal(await instance.ownerOf(tokenId2), user1);
@@ -130,7 +130,7 @@ it('lookUptokenIdToStarInfo test', async() => {
     // 2. Call your method lookUptokenIdToStarInfo
     let user1 = accounts[1];
     await instance.createStar('Star1', tokenId1, {from: user1});
-    let starName = await instance.lookUptokenIdStarInfo(tokenId1, {from: user1});
+    let starName = await instance.lookUptokenIdToStarInfo(tokenId1, {from: user1});
     
     // 3. Verify if you Star name is the same
     assert.equal(starName, 'Star1');
