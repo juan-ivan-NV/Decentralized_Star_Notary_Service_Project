@@ -33,5 +33,7 @@ RUN cd app && npm init -y
 # install all modules listed as dependencies in package.json
 RUN cd app && npm install
 
+# To deploy via Infura you'll need a wallet provider (like truffle-hdwallet-provider)
+RUN npm install truffle-hdwallet-provider@web3-one
 
 #CMD ["node", "index.js"]
