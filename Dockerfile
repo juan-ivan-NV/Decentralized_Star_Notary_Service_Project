@@ -1,6 +1,4 @@
-FROM node:10.16.0
-
-EXPOSE 9545
+FROM node:10
 
 WORKDIR /app
 
@@ -36,4 +34,8 @@ RUN cd app && npm install
 # To deploy via Infura you'll need a wallet provider (like truffle-hdwallet-provider)
 RUN npm install truffle-hdwallet-provider@web3-one
 
+# For truffle
+EXPOSE 9545
+# For webpack app
+EXPOSE 8080
 #CMD ["node", "index.js"]
