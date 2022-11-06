@@ -14,6 +14,7 @@ RUN cd app
 # install packages
 RUN cd app && npm install --save  openzeppelin-solidity@2.3
 RUN cd app && npm install --save  truffle-hdwallet-provider@1.0.17
+RUN npm install truffle-hdwallet-provider@1.0.10
 RUN cd app && npm install webpack-dev-server -g
 RUN cd app && npm install web3
 
@@ -37,6 +38,8 @@ RUN cd app && npm install
 
 # To deploy via Infura you'll need a wallet provider (like truffle-hdwallet-provider)
 RUN npm install truffle-hdwallet-provider@web3-one
+RUN npm install any-promise --save-dev
+RUN npm install bindings
 
 # For truffle
 EXPOSE 9545
