@@ -147,7 +147,7 @@ Download the repo and type ...
 
 Build the image <code>docker build -t testnetdapp . </code>
 
-Run the image and app <code>docker run -p 9545:9545 testnetdapp </code>
+Run the image and app <code>docker run -t -d -p 9545:9545 -p 8080:8080 testnetdapp </code>
 
 List the running containers <code>docker ps </code>
 
@@ -190,3 +190,7 @@ docker exec -it [container id] bash
 docker inspect [containername]
 
 http://localhost:8080/
+
+
+Transaction example
+https://goerli.etherscan.io/tx/0x33379cc3a9632ee63c4929aca9ef25b5b384455903a8033a0bbeb72c961af096

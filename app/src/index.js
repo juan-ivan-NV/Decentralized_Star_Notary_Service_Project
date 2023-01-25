@@ -43,12 +43,11 @@ const App = {
   lookUp: async function (){
     const { lookUptokenIdToStarInfo } = this.meta.methods;
     const lookId = document.getElementById("lookid").value;
-    try {
-      let starInfo = await lookUptokenIdToStarInfo(lookId).call();
-      const {0:name , 1: symbol} = starInfo;
-      App.setStatus("Star info: Name:" + name + "Symbol:" + symbol, "status"); 
-    } catch(e) {
-      App.setStatus("starId = " + lookId + " not found, try again. ");
+    let starName = await lookUptokenIdToStarInfo(lookId).call();
+    if(starName){
+      App.setStatus("Star name is:" + starName);
+    } else {
+      App.setStatus("Star not found, try again!")
     }
   }
 };
