@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:14
 
 WORKDIR /app
 
@@ -12,13 +12,13 @@ RUN npm install -g truffle@5.0.2
 
 RUN cd app
 # install packages
-RUN cd app && npm install --save  openzeppelin-solidity@2.3
+RUN cd app && npm install --save openzeppelin-solidity@2.3
 #RUN cd app && npm install --save  truffle-hdwallet-provider@1.0.2
 #RUN npm install truffle-hdwallet-provider@1.0.10
-RUN npm install --save  openzeppelin-solidity@1.10.0
-RUN npm install --save  truffle-hdwallet-provider@1.0.2
+RUN npm install --save openzeppelin-solidity@1.10.0
+RUN npm install --save truffle-hdwallet-provider@1.0.2
 RUN cd app && npm install webpack-dev-server -g
-RUN npm install web3
+RUN cd app && npm install --save web3
 
 
 # Remove the node_modules  
