@@ -43,36 +43,33 @@ Once the app is running ...
 
 <code>truffle develop</code>
 
-#### truffle console
-#### For compiling the contract, inside the development console, run:
+#### truffle console.<br/>
+#### For compiling the contract, inside the development console, run:<br/>
 <code>compile</code>
 
-#### For migrating the contract to the locally running Ethereum network, inside the development console
+#### For migrating the contract to the locally running Ethereum network, inside the development console.<br/>
 <code>migrate --reset</code>
 
-#### For running unit tests the contract, inside the development console, run:
+#### For running unit tests the contract, inside the development console, run:<br/>
 <code>test</code>
 
 
 ## Frontend - Once you are ready to start your frontend, run the following from the app folder:
 
+Open another container terminal and type
+
 <code>cd app</code>
 
 <code>npm run dev</code>
 
+On a browser window open http://localhost:8080/
 
-docker build -t testnetdapp .
-docker run -p 9545:9545 testnetdapp
-docker run -t -d -p 9545:9545 -p 8080:8080 testnetdapp bash
-docker run -i -t -d -p 9545:9545 -p 8080:8080 testnetdapp bash
-docker run -i -t testnetdapp bash
+<center>
+<img src='images/dappui.png'/>
+<figcaption>Dapp UI</figcaption></center>
+<br/>
 
-docker exec -it [container id] bash
-
-docker inspect [containername]
-
-http://localhost:8080/
-
+### Token symbol and name
 
 <code>// name: Is a short name to your token </code><br/>
 <code>string public name = "Alfa Tauri Token"; </code><br/>
@@ -80,5 +77,5 @@ http://localhost:8080/
 <code>string public symbol = "a Tau"; </code>
 
 
-Transaction example
+### Transaction example
 https://goerli.etherscan.io/tx/0x33379cc3a9632ee63c4929aca9ef25b5b384455903a8033a0bbeb72c961af096
