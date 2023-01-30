@@ -54,6 +54,32 @@ Once the app is running ...
 <code>test</code>
 
 
+### Deploying smart contract on a public test network.
+
+In this case we are using goerly.<br />
+
+First make sure you set the test network data in the config file ...
+
+<blockquote>
+truffle-config.js
+</blockquote> <br />
+
+To edith the file on the container
+
+<code>nano node_modules/browser-sync/dist/default-config.js</code>
+
+<blockquote>
+const HDWallet = require('truffle-hdwallet-provider'); <br />
+const infuraKey = "test network infura key"; <br />
+const mnemonic = "metamask mnemonic";
+</blockquote> <br />
+
+
+<code>truffle migrate --reset --network goerli</code><br />
+or <br />
+<code>truffle migrate --network goerli --reset </code>
+
+
 ## Frontend - Once you are ready to start your frontend, run the following from the app folder:
 
 Open another container terminal and type
